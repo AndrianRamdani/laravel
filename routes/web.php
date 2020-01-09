@@ -41,3 +41,25 @@ Route::get('pesan/{makan}/{minuman}/{harga}', function($mkn,$mnm,$hrg) {
     return 'Saya membeli '.$mkn.' dan '.$mnm.
             '<br>dengan harga'.$hrg;
 });
+
+//Route Optional parameter
+Route::get('halo/{nama?}', function($nama='Nurhadi Aldo' ) {
+    return 'Haloo Nama saya adalah '.$nama;
+});
+
+Route::get('pesanan/{makan?}/{minuman?}/{harga?}', function($mkn =null,$mnm=null,$hrg=null)
+{
+    if (isset($mkn)) {
+        echo "Anda Memesan : ".$mkn;
+    }
+    if (isset($mnm)) {
+        echo " dan ".$mnm;
+    }
+    if (isset($hrg)) {
+       echo "<br>Harga : ".$hrg;
+    }
+    if (!$mkn && !$mnm && !$hrg) {
+        echo "Anda belum memesan sesuatu";
+     }
+
+});
