@@ -103,3 +103,33 @@ Route::get('/gaji', function() {
     $query = App\Penggajian::all();
     return $query;
 });
+
+Route::get('/data-gaji-1', function() {
+    $query = App\Penggajian::where('agama','=','Khatolik')->get();
+    return $query;
+});
+
+Route::get('/data-gaji-2', function() {
+    $query = App\Penggajian::select('id','nama','agama')
+    ->where('agama','=','Islam')->get();
+    return $query;
+});
+
+Route::get('/data-gaji{id}', function() {
+    $query = App\Penggajian::findOrFail($id);
+    return $query;
+});
+
+Route::get('/tambah-data-gaji', function() {
+    $query = new App\Penggajian();
+    $query->nama = 'Indah Handayani';
+    $query->jabatan = 'Sekertaris';
+    $query->jk = 'Perempuan';
+    $query->alamat = 'Bandung';
+    $query->total_gaji = 'Rp.10.000.000';
+    $query->agama= 'Islam';
+    $query->save();
+    return $query;
+
+
+});
