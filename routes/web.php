@@ -43,9 +43,9 @@ Route::get('pesan/{makan}/{minuman}/{harga}', function($mkn,$mnm,$hrg) {
 });
 
 //Route Optional parameter
-Route::get('halo/{nama?}', function($nama='Nurhadi Aldo' ) {
-    return 'Haloo Nama saya adalah '.$nama;
-});
+// Route::get('halo/{nama?}', function($nama='Nurhadi Aldo' ) {
+//     return 'Haloo Nama saya adalah '.$nama;
+// });
 
 Route::get('pesanan/{makan?}/{minuman?}/{harga?}', function($mkn =null,$mnm=null,$hrg=null)
 {
@@ -131,5 +131,28 @@ Route::get('/tambah-data-gaji', function() {
     $query->save();
     return $query;
 
-
 });
+
+// Route::get('halo', 'SekolahController@hallo');
+// Route::get('word', 'SekolahController@dunia');
+// Route::get('hallo', 'SekolahController@ikoy');
+// Route::get('word1', 'SekolahController@ewok');
+// Route::get('hallo2', 'SekolahController@ian');
+// Route::get('word2', 'SekolahController@al');
+// Route::get('halo1', 'SekolahController@ari');
+// Route::get('word3', 'SekolahController@erik');
+// Route::get('halo2', 'SekolahController@abin');
+// Route::get('word4', 'SekolahController@nauly');
+// Route::get('warnakucing/{warna}', 'SekolahController@jeniskucing');
+
+Route::get('warnakucing/{warna?}', 'SekolahController@jeniskucing');
+
+Route::get('beli/{makanan?}/{harga?}', 'SekolahController@buy');
+
+//CRUD BOOK
+Route::get('book','BookController@index');
+Route::get('book-create/{jdl}','BookController@create');
+Route::get('book/{id}','BookController@show');
+Route::get('book-edit/{id}/{jdl}','BookController@edit');
+Route::get('book-delete/{id}','BookController@delete');
+Route::get('iann','BookController@ian');
