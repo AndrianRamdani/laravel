@@ -50,9 +50,14 @@ class BookController extends Controller
         $book->delete();
         return $book;
     }
-    public function ian()
+    public function latihan()
     {
         $book = Book::select('title','publisher','pages','price')->take(3)->get();
+        return $book;
+    }
+    public function latihan2()
+    {
+        $book = Book::count('id');
         return $book;
     }
 }

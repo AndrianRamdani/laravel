@@ -149,10 +149,21 @@ Route::get('warnakucing/{warna?}', 'SekolahController@jeniskucing');
 
 Route::get('beli/{makanan?}/{harga?}', 'SekolahController@buy');
 
-//CRUD BOOK
+//CRUD BOOK KANG CAND
 Route::get('book','BookController@index');
 Route::get('book-create/{jdl}','BookController@create');
 Route::get('book/{id}','BookController@show');
 Route::get('book-edit/{id}/{jdl}','BookController@edit');
 Route::get('book-delete/{id}','BookController@delete');
-Route::get('iann','BookController@ian');
+Route::get('iann','BookController@latihan');
+Route::get('ian','BookController@latihan2');
+//CRUD PA AGUNG
+// Route::get('artikel', 'ArtikelController@index');
+// Route::get('artikel/create','ArtikelController@create');
+// Route::get('artikel/{id}','ArtikelController@show');
+// Route::get('artikel/{id}/edit','ArtikelController@edit');
+// Route::PUT('artikel/{id}','ArtikelController@update');
+// Route::DELETE('artikel/{id}','ArtikelController@destroy');
+Route::resource('artikel','ArtikelController');
+
+
