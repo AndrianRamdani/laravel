@@ -166,4 +166,8 @@ Route::get('ian','BookController@latihan2');
 // Route::DELETE('artikel/{id}','ArtikelController@destroy');
 Route::resource('artikel','ArtikelController');
 
-
+//passing data
+Route::get('passing', 'PracticeController@pass');
+Route::get('passing1', 'PracticeController@pass1');
+Route::get('passing2', 'PracticeController@pass2');
+Route::get('barang', 'BarangController@index');
